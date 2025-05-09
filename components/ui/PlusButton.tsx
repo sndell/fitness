@@ -1,0 +1,10 @@
+import Monicon from "@monicon/native";
+import { TouchableOpacity } from "react-native";
+
+export const PlusButton = () => {
+  return (
+    <TouchableOpacity className="p-4 bg-white rounded-full">
+      <Monicon name="solar:add-circle-bold" size={24} color="#000000" />
+    </TouchableOpacity>
+  );
+};

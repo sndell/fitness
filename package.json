@@ -12,6 +12,8 @@
   },
   "dependencies": {
     "@expo/vector-icons": "^14.1.0",
+    "@monicon/metro": "^1.2.2",
+    "@monicon/native": "^1.2.2",
     "@react-navigation/bottom-tabs": "^7.3.12",
     "@react-navigation/elements": "^2.4.1",
     "@react-navigation/native": "^7.1.8",
@@ -35,12 +37,14 @@
     "react-native-reanimated": "~3.17.4",
     "react-native-safe-area-context": "5.4.0",
     "react-native-screens": "~4.10.0",
+    "react-native-svg": "^15.11.2",
     "react-native-web": "~0.20.0",
     "react-native-webview": "13.13.5",
     "tailwindcss": "^3.4.17"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
+    "@iconify-json/solar": "^1.2.2",
     "@types/react": "~19.0.10",
     "eslint": "^9.25.0",
     "eslint-config-expo": "~9.2.0",
