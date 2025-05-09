@@ -49,7 +49,7 @@ export const TabBarButton = ({
       accessibilityLabel={accessibilityLabel}
       testID={testID}
       // onPress={onPress}
-      className="items-center justify-center h-full p-4 rounded-full aspect-square"
+      className="items-center justify-center h-full p-5 rounded-full aspect-square"
     >
       <Animated.View style={iconStyle}>
         <Monicon name={iconName} size={24} color={iconColor} />
