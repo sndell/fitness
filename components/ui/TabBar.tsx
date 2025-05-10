@@ -3,7 +3,7 @@ import { useLinkBuilder } from "@react-navigation/native";
 import { Fragment, useEffect, useState } from "react";
 import { View } from "react-native";
 import Animated, { useAnimatedStyle, useSharedValue, withSpring } from "react-native-reanimated";
-import { PlusButton } from "./PlusButton";
+import { PlusButton } from "../PlusButton";
 import { TabBarButton } from "./TabBarButton";
 
 export function TabBar({ state, descriptors, navigation }: BottomTabBarProps) {
