@@ -1,4 +1,4 @@
-import { Stats } from "@/components/Stats";
+import { Dashboard } from "@/features/dashboard";
 import { LinearGradient } from "expo-linear-gradient";
 import { View } from "react-native";
 
@@ -8,10 +8,10 @@ export default function Home() {
       <LinearGradient
         colors={["#ffffff", "#f5f5f5"]}
         className="h-full"
-        start={{ x: 0.5, y: 0.4 }}
-        end={{ x: 0.5, y: 0.5 }}
+        start={{ x: 0.5, y: 0.3 }}
+        end={{ x: 0.5, y: 0.7 }}
       >
-        <Stats />
+        <Dashboard />
       </LinearGradient>
     </View>
   );

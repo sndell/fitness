@@ -1,10 +1,10 @@
-import { BottomTabBarProps } from "@react-navigation/bottom-tabs";
-import { useLinkBuilder } from "@react-navigation/native";
-import { Fragment, useEffect, useState } from "react";
-import { View } from "react-native";
-import Animated, { useAnimatedStyle, useSharedValue, withSpring } from "react-native-reanimated";
-import { PlusButton } from "../PlusButton";
-import { TabBarButton } from "./TabBarButton";
+import { BottomTabBarProps } from '@react-navigation/bottom-tabs';
+import { useLinkBuilder } from '@react-navigation/native';
+import { Fragment, useEffect, useState } from 'react';
+import { View } from 'react-native';
+import Animated, { useAnimatedStyle, useSharedValue, withSpring } from 'react-native-reanimated';
+import { TabBarButton } from './TabBarButton';
+import { TabBarPlusButton } from './TabBarPlusButton';
 
 export function TabBar({ state, descriptors, navigation }: BottomTabBarProps) {
   const { buildHref } = useLinkBuilder();
@@ -40,7 +40,7 @@ export function TabBar({ state, descriptors, navigation }: BottomTabBarProps) {
 
             const onPress = () => {
               const event = navigation.emit({
-                type: "tabPress",
+                type: 'tabPress',
                 target: route.key,
                 canPreventDefault: true,
               });
@@ -52,7 +52,7 @@ export function TabBar({ state, descriptors, navigation }: BottomTabBarProps) {
 
             return (
               <Fragment key={route.key}>
-                {index === MIDDLE_BUTTON_INDEX && <PlusButton />}
+                {index === MIDDLE_BUTTON_INDEX && <TabBarPlusButton />}
                 <TabBarButton
                   href={buildHref(route.name, route.params)}
                   isFocused={isFocused}
