@@ -1,10 +1,10 @@
 import { Dashboard } from "@/features/dashboard";
 import { LinearGradient } from "expo-linear-gradient";
-import { View } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Home() {
   return (
-    <View>
+    <SafeAreaView>
       <LinearGradient
         colors={["#ffffff", "#f5f5f5"]}
         className="h-full"
@@ -13,6 +13,6 @@ export default function Home() {
       >
         <Dashboard />
       </LinearGradient>
-    </View>
+    </SafeAreaView>
   );
 }

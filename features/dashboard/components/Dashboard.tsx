@@ -1,11 +1,11 @@
-import Monicon from '@monicon/native';
-import { Text, TouchableOpacity, View } from 'react-native';
-import { IntakeTracker } from './IntakeTracker';
-import { MealTracker } from './MealTracker';
+import Monicon from "@monicon/native";
+import { Text, TouchableOpacity, View } from "react-native";
+import { IntakeTracker } from "./IntakeTracker";
+import { MealTracker } from "./MealTracker";
 
 export const Dashboard = () => {
   return (
-    <View className="flex flex-col flex-1 gap-4 p-4">
+    <View className="flex flex-col flex-1 gap-4">
       <DashboardHeader />
       <IntakeTracker />
       <MealTrackerHeader />
@@ -16,13 +16,13 @@ export const Dashboard = () => {
 
 export const DashboardHeader = () => {
   const currentDate = new Date().toLocaleDateString(undefined, {
-    weekday: 'long',
-    day: 'numeric',
-    month: 'long',
+    weekday: "long",
+    day: "numeric",
+    month: "long",
   });
 
   return (
-    <View className="flex flex-row items-center justify-between">
+    <View className="flex flex-row items-center justify-between p-4 border-b border-primary">
       <View className="flex flex-row items-end gap-2">
         <Text className="text-2xl font-nunito-bold">Today</Text>
         <Text className="text-base font-nunito-semibold text-secondary pb-[1px]">{currentDate}</Text>
@@ -36,7 +36,7 @@ export const DashboardHeader = () => {
 };
 
 export const MealTrackerHeader = () => (
-  <View className="flex flex-row items-center justify-between">
+  <View className="flex flex-row items-center justify-between px-4">
     <View className="flex flex-row items-end gap-2">
       <Text className="text-2xl font-nunito-bold">Meals</Text>
       <Text className="text-base font-nunito-semibold text-secondary pb-[1px]">0</Text>

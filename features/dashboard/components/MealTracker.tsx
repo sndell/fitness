@@ -25,7 +25,7 @@ export const MealTracker = () => {
   };
 
   return (
-    <View className="flex-1">
+    <View className="flex-1 px-4">
       <ScrollView
         className="flex-1"
         contentContainerStyle={{ gap: 8, paddingBottom: 112 }}

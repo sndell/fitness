@@ -3,7 +3,7 @@ import { ColorValue, Text, View } from "react-native";
 
 export const IntakeTracker = () => {
   return (
-    <View className="flex flex-col gap-2">
+    <View className="flex flex-col gap-2 px-4">
       <View className="flex items-center gap-2 py-8">
         <View className="flex items-center justify-center bg-primary rounded-2xl">
           <Text className="text-5xl font-nunito-bold">
