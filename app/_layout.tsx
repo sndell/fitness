@@ -1,4 +1,4 @@
-import '@/styles/global.css';
+import "@/styles/global.css";
 import {
   Nunito_300Light,
   Nunito_400Regular,
@@ -6,10 +6,10 @@ import {
   Nunito_600SemiBold,
   Nunito_700Bold,
   useFonts,
-} from '@expo-google-fonts/nunito';
-import { Stack } from 'expo-router';
-import { StatusBar } from 'expo-status-bar';
-import { Fragment } from 'react';
+} from "@expo-google-fonts/nunito";
+import { Stack } from "expo-router";
+import { StatusBar } from "expo-status-bar";
+import { Fragment } from "react";
 
 export default function RootLayout() {
   const [fontsLoaded] = useFonts({
@@ -27,7 +27,7 @@ export default function RootLayout() {
       <Stack>
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
       </Stack>
-      <StatusBar style="dark" translucent={false} backgroundColor="black" />
+      <StatusBar style="dark" />
     </Fragment>
   );
 }
