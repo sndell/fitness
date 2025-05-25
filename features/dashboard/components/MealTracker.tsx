@@ -93,7 +93,7 @@ export const Meal = () => {
   useEffect(() => {
     const target = isOpen ? { h: 130, o: 1, r: 90, m: 12 } : { h: 0, o: 0, r: 0, m: 0 };
 
-    height.value = withSpring(target.h, SPRING_CONFIG);
+    height.value = withSpring(target.h, { ...SPRING_CONFIG, overshootClamping: !isOpen });
     opacity.value = withSpring(target.o, SPRING_CONFIG);
     rotation.value = withSpring(target.r, { ...SPRING_CONFIG, stiffness: 250 });
     marginTop.value = withSpring(target.m, {

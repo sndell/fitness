@@ -8,7 +8,7 @@ export default function Home() {
       <LinearGradient
         colors={["#ffffff", "#f5f5f5"]}
         className="h-full"
-        start={{ x: 0.5, y: 0.2 }}
+        start={{ x: 0.5, y: 0.3 }}
         end={{ x: 0.5, y: 0.7 }}
       >
         <Dashboard />
