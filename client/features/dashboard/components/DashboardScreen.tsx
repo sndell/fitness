@@ -2,17 +2,28 @@ import Monicon from "@monicon/native";
 import { Text, TouchableOpacity, View } from "react-native";
 import { IntakeTracker } from "./IntakeTracker";
 import { MealTracker } from "./MealTracker";
-import { AuthTest } from "@/components/AuthTest";
+import { LinearGradient } from "expo-linear-gradient";
+import { SafeAreaView } from "react-native-safe-area-context";
+// import { AuthTest } from "@/components/AuthTest";
 
-export const Dashboard = () => {
+export const DashboardScreen = () => {
   return (
-    <View className="flex flex-col flex-1 gap-4">
-      <AuthTest />
-      <DashboardHeader />
-      <IntakeTracker />
-      <MealTrackerHeader />
-      <MealTracker />
-    </View>
+    <SafeAreaView>
+      <LinearGradient
+        colors={["#ffffff", "#f5f5f5"]}
+        className="h-full"
+        start={{ x: 0.5, y: 0.3 }}
+        end={{ x: 0.5, y: 0.7 }}
+      >
+        <View className="flex flex-col flex-1 gap-4">
+          {/* <AuthTest /> */}
+          <DashboardHeader />
+          <IntakeTracker />
+          <MealTrackerHeader />
+          <MealTracker />
+        </View>
+      </LinearGradient>
+    </SafeAreaView>
   );
 };
 

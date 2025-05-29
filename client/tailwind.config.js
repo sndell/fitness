@@ -18,12 +18,12 @@ module.exports = {
       backgroundColor: {
         background: "#f5f5f5",
         primary: "#ffffff",
-        bar: "#f5f5f5",
-        danger: "#ffc9c0",
+        bar: "#F3F3F3",
+        danger: "#ff9e9e",
       },
       borderColor: {
         primary: "#F3F3F3",
-        danger: "#ffccc5",
+        danger: "#ffa6a6",
       },
       fontFamily: {
         "nunito-light": ["Nunito_300Light"],

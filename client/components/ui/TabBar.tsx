@@ -1,10 +1,10 @@
-import { BottomTabBarProps } from '@react-navigation/bottom-tabs';
-import { useLinkBuilder } from '@react-navigation/native';
-import { Fragment, useEffect, useState } from 'react';
-import { View } from 'react-native';
-import Animated, { useAnimatedStyle, useSharedValue, withSpring } from 'react-native-reanimated';
-import { TabBarButton } from './TabBarButton';
-import { TabBarPlusButton } from './TabBarPlusButton';
+import { BottomTabBarProps } from "@react-navigation/bottom-tabs";
+import { useLinkBuilder } from "@react-navigation/native";
+import { Fragment, useEffect, useState } from "react";
+import { View } from "react-native";
+import Animated, { useAnimatedStyle, useSharedValue, withSpring } from "react-native-reanimated";
+import { TabBarButton } from "./TabBarButton";
+import { TabBarPlusButton } from "./TabBarPlusButton";
 
 export function TabBar({ state, descriptors, navigation }: BottomTabBarProps) {
   const { buildHref } = useLinkBuilder();
@@ -40,7 +40,7 @@ export function TabBar({ state, descriptors, navigation }: BottomTabBarProps) {
 
             const onPress = () => {
               const event = navigation.emit({
-                type: 'tabPress',
+                type: "tabPress",
                 target: route.key,
                 canPreventDefault: true,
               });
