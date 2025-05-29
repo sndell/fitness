@@ -1,5 +1,5 @@
-import { AccountScreen } from "@/features/auth";
+import { AccountSettingsScreen } from "@/features/auth";
 
 export default function Account() {
-  return <AccountScreen />;
+  return <AccountSettingsScreen />;
 }

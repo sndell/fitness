@@ -2,7 +2,7 @@ import Monicon from "@monicon/native";
 import { Link } from "expo-router";
 import { Text, View } from "react-native";
 
-export const AccountButton = () => {
+export const AccountSettingsButton = () => {
   return (
     <Link href="/settings/account">
       <View className="flex-row items-center justify-between gap-2 p-4 border bg-primary rounded-2xl border-primary">

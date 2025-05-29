@@ -1,10 +1,10 @@
-import { ProgressRing } from "@/components/ProgressRing";
 import Monicon from "@monicon/native";
 import * as Haptics from "expo-haptics";
 import { LinearGradient } from "expo-linear-gradient";
 import { useEffect, useState } from "react";
 import { ScrollView, Text, TouchableOpacity, View } from "react-native";
 import Animated, { useAnimatedStyle, useSharedValue, withSpring } from "react-native-reanimated";
+import { ProgressRing } from "./ProgressRing";
 
 const NUTRITION_COLORS = {
   protein: "#FFB34E",
@@ -71,7 +71,7 @@ const NutritionItem = ({
 }) => (
   <View className="flex flex-col items-center">
     <Text className="font-nunito-semibold text-primary">{value}</Text>
-    <Text className="font-nunito-bold" style={{ color }}>
+    <Text className="font-nunito-semibold" style={{ color }}>
       {label}
     </Text>
     <Text className="text-sm font-nunito-semibold text-secondary">{percentage}</Text>
@@ -118,7 +118,7 @@ export const Meal = () => {
     <View className="p-4 border rounded-2xl bg-primary border-primary">
       <View className="flex flex-row">
         <View className="flex flex-1 gap-2">
-          <Text className="font-nunito-bold">Köttfärsbiffar med potatis och grönsaker</Text>
+          <Text className="font-nunito-semibold">Köttfärsbiffar med potatis och grönsaker</Text>
           <View className="flex flex-row gap-2">
             {["Lunch", "11:30", "500 kcal", "200g"].map((tag) => (
               <Text

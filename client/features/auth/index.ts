@@ -1,3 +1,3 @@
 export * from "./components/AuthScreen";
-export * from "./components/AccountButton";
-export * from "./components/AccountScreen";
+export * from "./components/AccountSettingsButton";
+export * from "./components/AccountSettingsScreen";

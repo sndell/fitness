@@ -2,7 +2,7 @@ import { authClient } from "@/lib/auth-client";
 import Monicon from "@monicon/native";
 import { Pressable, Text, View } from "react-native";
 
-export const AccountScreen = () => {
+export const AccountSettingsScreen = () => {
   const { data: session } = authClient.useSession();
 
   const handleLogout = () => authClient.signOut();

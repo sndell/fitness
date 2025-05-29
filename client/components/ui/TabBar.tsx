@@ -5,8 +5,11 @@ import { View } from "react-native";
 import Animated, { useAnimatedStyle, useSharedValue, withSpring } from "react-native-reanimated";
 import { TabBarButton } from "./TabBarButton";
 import { TabBarPlusButton } from "./TabBarPlusButton";
+import { TabBarMenu } from "./TabBarMenu";
+import * as Haptics from "expo-haptics";
 
 export function TabBar({ state, descriptors, navigation }: BottomTabBarProps) {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { buildHref } = useLinkBuilder();
   const [tabBarWidth, setTabBarWidth] = useState(0);
   const tabBarPositionX = useSharedValue(0);
@@ -28,8 +31,14 @@ export function TabBar({ state, descriptors, navigation }: BottomTabBarProps) {
     width: buttonWidth,
   }));
 
+  const toggleMenu = () => {
+    Haptics.selectionAsync();
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <View className="absolute left-0 right-0 items-center justify-center bottom-10">
+      {isMenuOpen && <TabBarMenu close={() => setIsMenuOpen(false)} />}
       <View className="p-1 overflow-hidden bg-black rounded-full">
         <View onLayout={(e) => setTabBarWidth(e.nativeEvent.layout.width)} className="flex-row gap-1">
           <Animated.View style={[indicatorStyle]} className="absolute h-full rounded-full bg-neutral-700" />
@@ -52,7 +61,7 @@ export function TabBar({ state, descriptors, navigation }: BottomTabBarProps) {
 
             return (
               <Fragment key={route.key}>
-                {index === MIDDLE_BUTTON_INDEX && <TabBarPlusButton />}
+                {index === MIDDLE_BUTTON_INDEX && <TabBarPlusButton toggleMenu={toggleMenu} />}
                 <TabBarButton
                   href={buildHref(route.name, route.params)}
                   isFocused={isFocused}
