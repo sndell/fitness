@@ -1,11 +1,12 @@
-import { drizzle, DrizzleD1Database } from "drizzle-orm/d1";
+import { drizzle } from "drizzle-orm/d1";
 import * as schema from "./schema";
+import { D1Database } from "@cloudflare/workers-types";
 
 export interface Env {
-  DB: DrizzleD1Database;
+  DB: D1Database;
 }
 
-export function createDatabase(d1: DrizzleD1Database) {
+export function createDatabase(d1: D1Database) {
   return drizzle(d1, { schema });
 }
 

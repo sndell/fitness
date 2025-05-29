@@ -26,6 +26,7 @@ export default function RootLayout() {
     <Fragment>
       <Stack>
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+        <Stack.Screen name="auth" options={{ headerShown: false }} />
       </Stack>
       <StatusBar style="dark" />
     </Fragment>

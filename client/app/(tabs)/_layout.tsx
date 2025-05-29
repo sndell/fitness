@@ -1,8 +1,12 @@
 import { TabBar } from "@/components/ui/TabBar";
+import { authClient } from "@/lib/auth-client";
 import "@/styles/global.css";
-import { Tabs } from "expo-router";
+import { Redirect, Tabs } from "expo-router";
 
 export default function TabLayout() {
+  const { data: session } = authClient.useSession();
+  if (!session) return <Redirect href="/auth" />;
+
   return (
     <Tabs tabBar={(props) => <TabBar {...props} />}>
       <Tabs.Screen name="index" options={{ title: "GigaFitness", headerShown: false }} />

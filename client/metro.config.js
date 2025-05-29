@@ -6,6 +6,7 @@ let config = getDefaultConfig(__dirname);
 
 // Apply withMonicon first
 config = withMonicon(config, {
+  icons: ["logos:google-icon"],
   collections: ["solar"],
 });
 
@@ -13,5 +14,7 @@ config = withMonicon(config, {
 config = withNativeWind(config, {
   input: "./styles/global.css",
 });
+
+config.resolver.unstable_enablePackageExports = true;
 
 module.exports = config;

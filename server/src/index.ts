@@ -1,3 +1,4 @@
+import "dotenv/config";
 import { Hono } from "hono";
 import { createDatabase, Env, type Database } from "./db/drizzle";
 import { authTypeHelper, createAuth, type Auth } from "./lib/auth";
@@ -12,7 +13,6 @@ type Variables = {
 
 const app = new Hono<{ Bindings: Env; Variables: Variables }>();
 
-// Middleware to initialize database and auth
 app.use("*", async (c, next) => {
   const db = createDatabase(c.env.DB);
   c.set("db", db);
@@ -33,9 +33,9 @@ app.use("*", async (c, next) => {
 });
 
 app.use(
-  "/api/auth/*", // or replace with "*" to enable cors for all routes
+  "*",
   cors({
-    origin: "http://localhost:8081", // replace with your origin
+    origin: ["fitness-app://*"],
     allowHeaders: ["Content-Type", "Authorization"],
     allowMethods: ["POST", "GET", "OPTIONS"],
     exposeHeaders: ["Content-Length"],
@@ -44,15 +44,14 @@ app.use(
   })
 );
 
-// Routes
 app.get("/", async (c) => {
+  console.log("Hello Hono!");
   return c.json({
     message: "Hello Hono!",
     timestamp: new Date().toISOString(),
   });
 });
 
-// Auth routes - handle all better-auth endpoints
 app.on(["POST", "GET"], "/api/auth/*", async (c) => {
   const auth = c.get("auth");
   return auth.handler(c.req.raw);

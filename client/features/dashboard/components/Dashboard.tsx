@@ -2,10 +2,12 @@ import Monicon from "@monicon/native";
 import { Text, TouchableOpacity, View } from "react-native";
 import { IntakeTracker } from "./IntakeTracker";
 import { MealTracker } from "./MealTracker";
+import { AuthTest } from "@/components/AuthTest";
 
 export const Dashboard = () => {
   return (
     <View className="flex flex-col flex-1 gap-4">
+      <AuthTest />
       <DashboardHeader />
       <IntakeTracker />
       <MealTrackerHeader />
@@ -29,7 +31,7 @@ export const DashboardHeader = () => {
       </View>
       <TouchableOpacity className="flex flex-row items-center gap-2 px-3 py-2 border rounded-full border-primary">
         <Monicon name="solar:pen-linear" size={16} />
-        <Text className=" font-nunito-semibold">Edit</Text>
+        <Text className="font-nunito-semibold">Edit</Text>
       </TouchableOpacity>
     </View>
   );
